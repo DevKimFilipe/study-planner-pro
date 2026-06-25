@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Planner Pro</title>
+    <meta name="description" content="Gerenciador de tarefas de estudo com estatísticas de progresso.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Libre+Franklin:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,82 +17,74 @@
 <body>
 
     <header>
-
-        <div class="logo">
-            Study Planner Pro
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-rabisco">Study</span> Planner <span class="logo-pro">Pro</span>
+            </div>
+            <button id="themeButton" type="button" aria-label="Alternar tema">
+                <span class="theme-icon">☾</span>
+            </button>
         </div>
-
-        <button id="themeButton">
-            🌙 Tema
-        </button>
-
+        <div class="header-fita" aria-hidden="true"></div>
     </header>
 
     <main>
 
         <section class="hero">
-
+            <p class="hero-tag">— caderno de tarefas —</p>
             <h1>Organize seus estudos</h1>
-
-            <p>
-                Gerencie tarefas, acompanhe seu progresso e mantenha sua rotina organizada.
+            <p class="hero-texto">
+                Anote o que precisa estudar, marque o que já foi e veja
+                o progresso da semana sem precisar abrir três aplicativos
+                diferentes pra isso.
             </p>
-
         </section>
 
         <section class="add-task">
-
-            <input
-                type="text"
-                id="taskInput"
-                placeholder="Digite uma tarefa">
-
-            <button id="addButton">
-                Adicionar
-            </button>
-
+            <label for="taskInput" class="add-task-label">Nova anotação</label>
+            <div class="add-task-linha">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="ex.: revisar capítulo 2 antes de sexta">
+                <button id="addButton" type="button">
+                    Anotar
+                </button>
+            </div>
         </section>
 
         <section class="filters">
-
-            <button data-filter="all">
-                Todas
-            </button>
-
-            <button data-filter="pending">
-                Pendentes
-            </button>
-
-            <button data-filter="completed">
-                Concluídas
-            </button>
-
+            <button class="filtro ativo" data-filter="all">Todas</button>
+            <button class="filtro" data-filter="pending">Pendentes</button>
+            <button class="filtro" data-filter="completed">Concluídas</button>
         </section>
 
         <section class="stats">
 
-            <div class="card">
-                <h3>Total</h3>
-                <p id="totalTasks">0</p>
+            <div class="card card-total">
+                <span class="card-numero" id="totalTasks">0</span>
+                <h3>no total</h3>
             </div>
 
-            <div class="card">
-                <h3>Concluídas</h3>
-                <p id="completedTasks">0</p>
+            <div class="card card-feito">
+                <span class="card-numero" id="completedTasks">0</span>
+                <h3>concluídas</h3>
             </div>
 
-            <div class="card">
-                <h3>Pendentes</h3>
-                <p id="pendingTasks">0</p>
+            <div class="card card-falta">
+                <span class="card-numero" id="pendingTasks">0</span>
+                <h3>ainda faltam</h3>
             </div>
 
         </section>
 
-        <ul id="taskList">
-
-        </ul>
+        <ul id="taskList" class="task-list"></ul>
 
     </main>
+
+    <footer>
+        <p>Kim Borges</p>
+    </footer>
 
     <script src="script.js"></script>
 
