@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            Study Planner Pro
+        </div>
+
+        <button id="themeButton">
+            🌙 Tema
+        </button>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <h1>Organize seus estudos</h1>
+
+            <p>
+                Gerencie tarefas, acompanhe seu progresso e mantenha sua rotina organizada.
+            </p>
+
+        </section>
+
+        <section class="add-task">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Digite uma tarefa">
+
+            <button id="addButton">
+                Adicionar
+            </button>
+
+        </section>
+
+        <section class="filters">
+
+            <button data-filter="all">
+                Todas
+            </button>
+
+            <button data-filter="pending">
+                Pendentes
+            </button>
+
+            <button data-filter="completed">
+                Concluídas
+            </button>
+
+        </section>
+
+        <section class="stats">
+
+            <div class="card">
+                <h3>Total</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Concluídas</h3>
+                <p id="completedTasks">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Pendentes</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+        </section>
+
+        <ul id="taskList">
+
+        </ul>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
